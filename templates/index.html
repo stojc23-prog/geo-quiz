@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Quiz</title>
+
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="top-bar">
+        <h1>Geography Quiz</h1>
+    </div>
+
+    <div class="main">
+        <h2> {{question}}</h2>
+
+        {% if result%}
+
+            {% if result == "Correct!"%}
+
+                <h3 style="color: blue;"> {{result}}</h3>
+            {% else %}
+                <h3 style="color: red;"> {{result}}</h3>
+            {% endif %}
+
+
+        {% endif %}
+
+        <form action="/" method="post">
+            <input type="text" placeholder="Enter your answer..." name="answer" required>
+            <input type="hidden" name="correct_answer" value="{{correct_answer}}">
+            <button type="submit">Submit</button>
+        </form>
+
+
+    </div>
+
+    <div class="footer">
+        <p>Created by Marko Stojanovic</p>
+    </div>
+
+</div>
+    
+</body>
+</html>
